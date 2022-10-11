@@ -43,12 +43,12 @@
             <form id="profile-form">
                 <label>
                     <div>Username</div>
-                    <input name="Username" required placeholder="Create a username..." />
+                    <input name="user_name" required placeholder="Create a username..." />
                 </label>
 
                 <label>
                     <div>Avatar</div>
-                    <input type="file" name="avatar_url" placeholder="choose your profile photo" />
+                    <input type="file" name="image" placeholder="choose your profile photo" />
                     <img id="image-preview" src="" class="avatar" />
                 </label>
 
@@ -57,7 +57,9 @@
                     <textarea name="bio" placeholder="About you..."></textarea>
                 </label>
 
-                <button>Update Profile</button>
+                <button id="update-button">Update Profile</button>
+
+                <p id="error-display"></p>
             </form>
         </main>
     </body>

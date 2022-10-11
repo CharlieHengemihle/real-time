@@ -1,0 +1,8 @@
+ul {
+    display: grid;
+    gap: 5px;
+}
+
+li {
+    border: 1px solid black;
+}

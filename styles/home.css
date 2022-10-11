@@ -1,8 +1,22 @@
 ul {
     display: grid;
+    grid-template: repeat(auto-fill, minmax(100px, 1fr)) / repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-flow: row;
     gap: 5px;
+    justify-items: center;
+    align-items: center;
 }
 
-li {
+.room-item {
+    height: 100px;
+    width: 200px;
     border: 1px solid black;
+}
+
+.room-item h3 {
+    margin: 0;
+}
+
+.room-item p {
+    margin: 0;
 }

@@ -25,13 +25,14 @@
         <!-- css -->
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="../styles/form.css" />
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header class="page-header">
             <img class="logo" src="../assets/html_css_js.png" alt="logo" />
-            <p class="title">Real Time</p>
+            <p class="title">Supabase Web App</p>
             <nav>
                 <a href="../">Home</a>
                 <a id="sign-out-link" href="../auth">Sign Out</a>
@@ -44,11 +45,13 @@
                     <div>Username</div>
                     <input name="Username" required placeholder="Create a username..." />
                 </label>
+
                 <label>
                     <div>Avatar</div>
                     <input type="file" name="avatar_url" placeholder="choose your profile photo" />
                     <img id="image-preview" src="" class="avatar" />
                 </label>
+
                 <label>
                     <div>Bio</div>
                     <textarea name="bio" placeholder="About you..."></textarea>

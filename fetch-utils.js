@@ -44,3 +44,32 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
     const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
     return url;
 }
+
+export async function createRoom(room) {
+    return await client.from('rooms').insert(room);
+}
+
+export async function createComment(comment) {
+    return await client.from('comments').insert(comment).single();
+}
+
+export async function getRoom(id) {
+    return await client
+        .from('rooms')
+        .select(`*, comments (*)`)
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'comments', ascending: false })
+        .single();
+}
+
+export async function getRooms() {
+    return await client.from('rooms').select('*');
+}
+
+export async function createProfile(profile) {
+    return await client.from('profiles').insert(profile);
+}
+
+export async function getProfile(id) {
+    return await client.from('profiles').select().match({ id }).maybeSingle();
+}

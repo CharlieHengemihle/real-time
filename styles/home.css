@@ -8,15 +8,33 @@ ul {
 }
 
 .room-item {
+    display: grid;
     height: 100px;
     width: 200px;
     border: 1px solid black;
+    align-items: center;
+    justify-items: center;
 }
 
 .room-item h3 {
     margin: 0;
 }
 
+.room-item span {
+    margin: 0;
+}
+
+.description-image-container {
+    display: grid;
+    grid-template-columns: 150px 50px;
+}
+
+.room-item img {
+    width: 100%;
+    padding: 5px;
+}
+
 .room-item p {
     margin: 0;
+    padding: 5px;
 }

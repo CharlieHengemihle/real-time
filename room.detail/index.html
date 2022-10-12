@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Supabase Web App</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="/room.detail/room-detail.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <!-- add link for page specific css -->
+        <link rel="stylesheet" href="/styles/home.css" />
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
+            <p class="title">Supabase Web App</p>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/create.room/index.html">Create Room</a>
+                <a href="/create.profile/index.html">Create Profile</a>
+                <a id="sign-out-link" href="auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="about-room-comment-form">
+                <div id="room-detail">
+                    <h2 id="room-title"></h2>
+                    <span id="room-category"></span>
+                    <p id="about-room"></p>
+                    <img src="" alt="" id="room-image" />
+                </div>
+                <form>
+                    <h3 id="message-board-header">What do you want to talk about?</h3>
+                    <input type="text" />
+                    <button>Submit</button>
+                </form>
+            </section>
+            <section id="comment-section">
+                <ul id="comments">
+                    <li class="comment-item">
+                        <p class="comment-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
+                            sapiente, qui sit atque suscipit facere in repellat eaque?
+                        </p>
+                        <span class="timestamp">Jan 1st 1970</span>
+                    </li>
+                    <li class="comment-item">
+                        <p class="comment-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
+                            sapiente, qui sit atque suscipit facere in repellat eaque?
+                        </p>
+                        <span class="timestamp">Jan 1st 1970</span>
+                    </li>
+                    <li class="comment-item">
+                        <p class="comment-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
+                            sapiente, qui sit atque suscipit facere in repellat eaque?
+                        </p>
+                        <span class="timestamp">Jan 1st 1970</span>
+                    </li>
+                    <li class="comment-item">
+                        <p class="comment-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
+                            sapiente, qui sit atque suscipit facere in repellat eaque?
+                        </p>
+                        <span class="timestamp">Jan 1st 1970</span>
+                    </li>
+                    <li class="comment-item">
+                        <p class="comment-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
+                            sapiente, qui sit atque suscipit facere in repellat eaque?
+                        </p>
+                        <span class="timestamp">Jan 1st 1970</span>
+                    </li>
+                    <li class="comment-item">
+                        <p class="comment-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
+                            sapiente, qui sit atque suscipit facere in repellat eaque?
+                        </p>
+                        <span class="timestamp">Jan 1st 1970</span>
+                    </li>
+                </ul>
+            </section>
+            <p id="error-display"></p>
+        </main>
+    </body>
+</html>

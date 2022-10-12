@@ -31,7 +31,7 @@ export function renderRoom(room) {
     li.classList.add('room-item');
 
     const a = document.createElement('a');
-    a.href = `/post/?id=${room.id}`;
+    a.href = `/room.detail/?id=${room.id}`;
 
     const div = document.createElement('div');
     div.classList.add('description-image-container');
@@ -49,8 +49,6 @@ export function renderRoom(room) {
 
     const image = document.createElement('img');
     image.src = room.image;
-
-    // if (image.src < )
 
     const p = document.createElement('p');
     p.classList.add('room-description');

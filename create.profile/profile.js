@@ -1,7 +1,7 @@
 // imports
 import '../auth/user.js';
 import { createProfile } from '../fetch-utils.js';
-import { getProfile, getUser } from '../fetch-utils.js';
+import { getProfile, getUser, uploadImage } from '../fetch-utils.js';
 
 const user = getUser();
 
@@ -40,10 +40,15 @@ profileForm.addEventListener('submit', async (e) => {
 
     const formData = new FormData(profileForm);
 
+    const imageFile = formData.get('image');
+    const randomFolder = Math.floor(Date.now() * Math.random());
+    const imagePath = `profiles/${randomFolder}/${imageFile.name}`;
+    const url = await uploadImage('bucket1', imagePath, imageFile);
+    
     const createProfileObject = {
         user_name: formData.get('user_name'),
         bio: formData.get('bio'),
-        image: formData.get('image'),
+        image: url,
     };
 
     const response = await createProfile(createProfileObject);

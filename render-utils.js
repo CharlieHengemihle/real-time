@@ -18,10 +18,19 @@ export function renderProfile(profile, userId) {
     return li;
 }
 
-export function renderComment(comment) {
+export function renderComment(comment, profile, userId) {
     const li = document.createElement('li');
+    li.classList.add('profileImg');
+    if (userId === profile.id) {
+        li.classList.add('self');
+    }
+    const img = document.createElement('img');
+    img.src = profile.img;
 
-    li.textContent = comment.text;
+    const a = document.createElement('a');
+    a.textContent = comment.text;
+
+    li.append(img, a);
 
     return li;
 }

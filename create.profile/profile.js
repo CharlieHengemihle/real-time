@@ -45,7 +45,7 @@ profileForm.addEventListener('submit', async (e) => {
         bio: formData.get('bio'),
         image: formData.get('image'),
     };
-    console.log(createProfileObject);
+
     const response = await createProfile(createProfileObject);
     error = response.error;
 
@@ -53,6 +53,9 @@ profileForm.addEventListener('submit', async (e) => {
         displayError();
         updateButton.disabled = false;
         updateButton.textContent = buttonText;
+    } else {
+        profileForm.reset();
+        location.assign('../');
     }
 });
 

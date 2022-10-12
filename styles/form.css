@@ -2,7 +2,6 @@ form:not(.inline) {
     width: 100%;
     margin: auto;
     max-width: 500px;
-    border-radius: 5%;
     border: 3px solid;
     background: #d5cfcb;
     padding: 20px;
@@ -32,7 +31,31 @@ form button {
 
 form input,
 form select {
-    height: 35px;
+    height: 40px;
+}
+
+.lil-guy {
+    height: 20px;
+    width: 20px;
+}
+
+.banner {
+    display: inline-flex;
+    justify-content: flex-start;
+    height: 30px;
+    background-image: linear-gradient(to right, darkblue, skyblue);
+    color: azure;
+    align-items: center;
+}
+.X-button {
+    width: 25px;
+    height: 25px;
+    background-color: #d5cfcb;
+    color: black;
+    box-shadow: 2px 2px black;
+    margin-top: 0%;
+    padding: 0px;
+    padding-top: 1px;
 }
 
 form input[type='file'] {

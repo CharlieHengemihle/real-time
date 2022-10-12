@@ -37,23 +37,21 @@ window.addEventListener('load', async () => {
         location.assign('/');
     } else {
         displayRoom();
-        console.log('hlelo');
         displayComments();
     }
 
-    // onComment(room.id, async (payload) => {
-    //     const commentId = payload.new.id;
-    //     const commentResponse = await getComment(commentId);
-    //     error = commentResponse.error;
-    //     console.log(payload);
-    //     if (error) {
-    //         displayError();
-    //     } else {
-    //         const comment = commentResponse.data;
-    //         room.comments.unshift(comment);
-    //         displayComments();
-    //     }
-    // });
+    onComment(room.id, async (payload) => {
+        const commentId = payload.new.id;
+        const commentResponse = await getComment(commentId);
+        error = commentResponse.error;
+        if (error) {
+            displayError();
+        } else {
+            const comment = commentResponse.data;
+            room.comments.unshift(comment);
+            displayComments();
+        }
+    });
 });
 
 addCommentForm.addEventListener('submit', async (e) => {
@@ -68,15 +66,14 @@ addCommentForm.addEventListener('submit', async (e) => {
 
     const response = await createComment(commentInsert);
     error = response.error;
-    const comment = response.data;
 
     if (error) {
         displayError();
     } else {
         addCommentForm.reset();
-        room.comments.unshift(comment);
-        console.log(commentInsert);
-        displayComments();
+        // room.comments.unshift(comment);
+        // console.log(commentInsert);
+        // displayComments();
     }
     // return;
 });

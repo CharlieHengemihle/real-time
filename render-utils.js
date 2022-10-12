@@ -54,7 +54,7 @@ export function renderRoom(room) {
 
     const p = document.createElement('p');
     p.classList.add('room-description');
-    p.textContent = room.body;
+    p.textContent = room.about;
 
     titleCatDiv.append(h3, span);
 

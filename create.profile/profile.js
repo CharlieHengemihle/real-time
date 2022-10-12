@@ -11,6 +11,7 @@ const profileForm = document.getElementById('profile-form');
 const updateButton = document.getElementById('update-button');
 const userNameInput = profileForm.querySelector('[name=user_name]');
 const bioTextArea = profileForm.querySelector('[name=bio]');
+const xButton = document.getElementById('x-button');
 
 // state
 let profile = null;
@@ -28,6 +29,10 @@ window.addEventListener('load', async () => {
     if (profile) {
         displayProfile();
     }
+});
+
+xButton.addEventListener('click', () => {
+    location.assign('../');
 });
 
 // profile

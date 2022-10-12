@@ -7,6 +7,7 @@ const errorDisplay = document.getElementById('error-display');
 const createRoomForm = document.getElementById('create-room-form');
 const imageInput = document.getElementById('image-input');
 const preview = document.getElementById('preview');
+const xButton = document.getElementById('x-button');
 
 preview.classList.add('avatar');
 
@@ -22,6 +23,10 @@ imageInput.addEventListener('change', () => {
     } else {
         preview.src = '../assets/placeholder-image.png';
     }
+});
+
+xButton.addEventListener('click', () => {
+    location.assign('../');
 });
 
 createRoomForm.addEventListener('submit', async (e) => {

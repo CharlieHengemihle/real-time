@@ -73,3 +73,11 @@ export async function createProfile(profile) {
 export async function getProfile(id) {
     return await client.from('profiles').select().match({ id }).maybeSingle();
 }
+
+export function onComment(roomId, handleMessage) {
+    client.from(`comments:room_id=eq.${roomId}`).on('INSERT', handleMessage).subscribe();
+}
+
+export async function getComment(id) {
+    return await client.from('comments').select(`*. user:profiles(id, text)`).eq('id', id).single();
+}

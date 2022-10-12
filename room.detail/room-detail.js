@@ -1,13 +1,16 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
-import { getRoom } from '../fetch-utils.js';
+import { createComment, getRoom, onComment, getComment } from '../fetch-utils.js';
 import '../auth/user.js';
+import { renderComment } from '../render-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const roomTitle = document.getElementById('room-title');
 const roomCategory = document.getElementById('room-category');
 const roomAbout = document.getElementById('about-room');
+const commentList = document.getElementById('comments');
+const addCommentForm = document.getElementById('add-comment-form');
 
 /* State */
 let error = null;
@@ -19,7 +22,8 @@ window.addEventListener('load', async () => {
     const id = searchParams.get('id');
 
     if (!id) {
-        location.replace('/');
+        location.replace('../');
+        return;
     } else {
         const response = await getRoom(id);
         error = response.error;
@@ -28,12 +32,64 @@ window.addEventListener('load', async () => {
 
     if (error) {
         displayError();
+    }
+    if (!room) {
+        location.assign('/');
     } else {
         displayRoom();
+        console.log('hlelo');
+        displayComments();
     }
+
+    // onComment(room.id, async (payload) => {
+    //     const commentId = payload.new.id;
+    //     const commentResponse = await getComment(commentId);
+    //     error = commentResponse.error;
+    //     console.log(payload);
+    //     if (error) {
+    //         displayError();
+    //     } else {
+    //         const comment = commentResponse.data;
+    //         room.comments.unshift(comment);
+    //         displayComments();
+    //     }
+    // });
 });
 
+addCommentForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(addCommentForm);
+
+    let commentInsert = {
+        room_id: room.id,
+        text: formData.get('text'),
+    };
+
+    const response = await createComment(commentInsert);
+    error = response.error;
+    const comment = response.data;
+
+    if (error) {
+        displayError();
+    } else {
+        addCommentForm.reset();
+        room.comments.unshift(comment);
+        console.log(commentInsert);
+        displayComments();
+    }
+    // return;
+});
 /* Display Functions */
+function displayComments() {
+    commentList.innerHTML = '';
+
+    for (const comment of room.comments) {
+        const commentEl = renderComment(comment);
+        commentList.append(commentEl);
+    }
+}
+
 function displayError() {
     if (error) {
         // eslint-disable-next-line no-console

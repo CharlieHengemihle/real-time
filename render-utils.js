@@ -20,8 +20,11 @@ export function renderProfile(profile, userId) {
 
 export function renderComment(comment) {
     const li = document.createElement('li');
-    li.textContent = comment.text;
 
+    const p = document.createElement('p');
+    p.textContent = comment.text;
+
+    li.append(p);
     return li;
 }
 
@@ -30,7 +33,7 @@ export function renderRoom(room) {
     li.classList.add('room-item');
 
     const a = document.createElement('a');
-    a.href = `/post/?id=${room.id}`;
+    a.href = `/room.detail/?id=${room.id}`;
 
     const div = document.createElement('div');
     div.classList.add('description-image-container');

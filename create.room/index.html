@@ -43,11 +43,10 @@
         <main>
             <form id="create-room-form">
                 <div class="banner">
-                <img src="/assets/aim-guy.png" class="lil-guy" />
-                <h2>Create a Room</h2>
+                <h2><img src="/assets/aim-guy.png" class="lil-guy" />Create a Room</h2>
                 <button class="X-button">X</button>
                 </div>
-                <img src="/assets/aimbanner.png" alt="aim-banner" />
+                <img src="/assets/aimbanner.png" alt="aim-banner" class="big-guy" />
                 <label>
                     <div>Create a Room</div>
                     <input name="room-name" required placeholder="Name Your Room" />
@@ -69,6 +68,7 @@
                         <option>🦕 Creatures</option>
                     </select>
                 </label>
+                <div class="image-select">
                 <label>
                     <div>Room Image</div>
                     <input
@@ -80,6 +80,7 @@
                     />
                 </label>
                 <img src="../assets/placeholder-image.png" id="preview" class="preview" />
+                </div>
                 <button>Create Room</button>
                 <p id="error-display" class="error"></p>
             </form>

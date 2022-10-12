@@ -30,7 +30,7 @@ export function renderRoom(room) {
     li.classList.add('room-item');
 
     const a = document.createElement('a');
-    a.href = `/post/?id=${room.id}`;
+    a.href = `/room.detail/?id=${room.id}`;
 
     const div = document.createElement('div');
     div.classList.add('description-image-container');

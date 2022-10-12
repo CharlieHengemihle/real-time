@@ -18,19 +18,9 @@ export function renderProfile(profile, userId) {
     return li;
 }
 
-export function renderComment(comment, profile, userId) {
+export function renderComment(comment) {
     const li = document.createElement('li');
-    li.classList.add('profileImg');
-    if (userId === profile.id) {
-        li.classList.add('self');
-    }
-    const img = document.createElement('img');
-    img.src = profile.img;
-
-    const a = document.createElement('a');
-    a.textContent = comment.text;
-
-    li.append(img, a);
+    li.textContent = comment.text;
 
     return li;
 }
@@ -40,7 +30,7 @@ export function renderRoom(room) {
     li.classList.add('room-item');
 
     const a = document.createElement('a');
-    a.href = `/room.detail/?id=${room.id}`;
+    a.href = `/post/?id=${room.id}`;
 
     const div = document.createElement('div');
     div.classList.add('description-image-container');

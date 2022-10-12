@@ -50,8 +50,6 @@ export function renderRoom(room) {
     const image = document.createElement('img');
     image.src = room.image;
 
-    // if (image.src < )
-
     const p = document.createElement('p');
     p.classList.add('room-description');
     p.textContent = room.about;

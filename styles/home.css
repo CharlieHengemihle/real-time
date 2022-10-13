@@ -1,0 +1,130 @@
+ul {
+    display: grid;
+    grid-template: repeat(auto-fill, minmax(100px, 1fr)) / repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-flow: row;
+    gap: 5px;
+    justify-items: center;
+    align-items: center;
+}
+
+.room-item {
+    display: grid;
+    height: 150px;
+    width: 205px;
+    border: 1px solid black;
+    justify-items: center;
+    background-color: #d5cfcb;
+}
+
+.room-item h3 {
+    margin: 0;
+    color: white;
+}
+
+.room-item span {
+    color: white;
+    margin: 0;
+}
+
+.description-image-container {
+    background-image: linear-gradient(to right, darkblue, skyblue);
+    display: grid;
+    grid-template-columns: 150px 50px;
+    height: 65px;
+    margin: 2px;
+}
+
+.room-item img {
+    width: 100%;
+    padding: 5px;
+}
+
+.room-item p {
+    margin: 0;
+    padding: 5px;
+    color: black;
+}
+
+#search-bar {
+    display: flex;
+    margin: 10px;
+    justify-content: space-evenly;
+}
+
+#search-form {
+    width: 216px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #d5cfcb;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.search-form-label {
+    margin: 0;
+    color: #3590db;
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.219);
+}
+
+#search-span {
+    font-weight: normal;
+    color: white;
+    font-size: 0.7em;
+    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.548);
+}
+
+#search-form button {
+    padding: 2px;
+    background: #3590db;
+    border: 2px groove rgb(43, 83, 129);
+}
+
+#search-form button:hover {
+    transform: scale(102%);
+    transition: all 100ms ease-in;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.39);
+}
+
+#search-form input {
+    background-color: white;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+#search-form input::placeholder {
+    color: #2b6ca1b4;
+}
+
+a {
+    background-image: linear-gradient(to right, #3c18dd, #3c18dd 50%, rgb(0, 0, 0) 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+
+    transition: all 0.3s ease-in-out;
+}
+
+a:before {
+    content: '';
+    background: #3590db;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    background-position: 0;
+}
+
+a:hover::before {
+    width: 100%;
+}

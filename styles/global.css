@@ -1,5 +1,5 @@
 :root {
-    --background: rgb(224, 234, 247);
+    --background: powderblue;
     --header-background: white;
     --text-color: rgb(7, 5, 68);
     --label-color: rgb(75, 102, 98);
@@ -25,12 +25,13 @@ body {
     top: 0;
     padding: 15px;
     height: 80px;
+    color: white;
 
     display: flex;
     align-items: center;
     gap: 10px;
 
-    background-color: var(--header-background);
+    background-image: linear-gradient(to right, darkblue, skyblue);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -68,4 +69,8 @@ main {
 
 .hidden {
     display: none;
+}
+
+a {
+    text-decoration: none;
 }

@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>AOLOL</title>
+        <title>Supabase Web App</title>
         <link rel="icon" type="image/x-icon" href="/assets/aim-guy.png" />
 
         <!-- js -->
@@ -15,7 +15,7 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="/room.detail/room-detail.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,32 +30,43 @@
         <link rel="stylesheet" href="/styles/global.css" />
         <!-- add link for page specific css -->
         <link rel="stylesheet" href="/styles/home.css" />
+        <link rel="stylesheet" href="/room.detail/room-detail.css" />
     </head>
 
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/aim-guy.png" alt="logo" />
-            <p class="title">What is this, AOL?</p>
+            <p class="title">Supabase Web App</p>
             <nav>
-                <a class="a" href="/">Home</a>
-                <a class="a" href="/create.room/index.html">Create Room</a>
-                <a class="a" href="/create.profile/index.html">Create Profile</a>
-                <a class="a" id="sign-out-link" href="auth">Sign Out</a>
+                <a href="/">Home</a>
+                <a href="/create.room/index.html">Create Room</a>
+                <a href="/create.profile/index.html">Create Profile</a>
+                <a id="sign-out-link" href="/auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <section id="search-bar">
-                <label>
-                    <p class="search-form-label">AOL<span id="search-span">Search</span>.</p>
-                    <form id="search-form">
-                        <input name="title-search" type="text" placeholder="Search rooms..." />
-                        <button>🔎</button>
+            <section id="about-room-comment-form">
+                <div class="banner">
+                    <h2><img src="/assets/aim-guy.png" class="lil-guy" />An Internet Room</h2>
+                    <button class="X-button" id="x-button">X</button>
+                </div>
+                <div id="room-detail">
+                    <h2 id="room-title"></h2>
+                    <span id="room-category"></span>
+                    <p id="about-room"></p>
+                    <img src="" alt="" id="room-image" />
+                </div>
+                <form id="add-comment-form">
+                    <h3 id="message-board-header">What do you want to talk about?</h3>
+                    <div id="comment-entry">
+                        <input name="text" type="text" />
+                        <button>Submit</button>
+                    </div>
                     </form>
-                </label>
             </section>
-            <section id="rooms">
-                <ul id="rooms-list"></ul>
+            <section id="comment-section">
+                <ul id="comments"></ul>
             </section>
             <p id="error-display"></p>
         </main>

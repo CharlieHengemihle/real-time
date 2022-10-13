@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>What's AOL anyways?</title>
+        <link rel="icon" type="image/x-icon" href="../assets/aim-guy.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="profile.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="../styles/form.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="../assets/aim-guy.png" alt="logo" />
+            <p class="title">Profile Editor</p>
+            <nav>
+                <a class="a" href="../">Home</a>
+                <a class="a" href="../create.room/index.html">Create Room</a>
+                <a class="a" id="sign-out-link" href="../auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <form id="profile-form">
+                <div class="banner">
+                    <h2><img src="/assets/aim-guy.png" class="lil-guy" />Create a Room</h2>
+                    <button class="X-button" id="x-button">X</button>
+                </div>
+                <img src="/assets/aimbanner.png" alt="aim-banner" class="big-guy" />
+                <label>
+                    <div>Username</div>
+                    <input name="user_name" required placeholder="Create a username..." />
+                </label>
+
+                <label id="image-input">
+                    <div>Avatar</div>
+                    <div class="room-image-select">
+                        <input type="file" name="image" placeholder="choose your profile photo" />
+                        <img
+                            id="image-preview"
+                            src="../assets/placeholder-image.png"
+                            class="avatar"
+                        />
+                    </div>
+                </label>
+
+                <label>
+                    <div>Bio</div>
+                    <textarea name="bio" placeholder="About you..."></textarea>
+                </label>
+
+                <button id="update-button">Update Profile</button>
+
+                <p id="error-display"></p>
+            </form>
+        </main>
+    </body>
+</html>

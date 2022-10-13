@@ -11,6 +11,7 @@ const roomCategory = document.getElementById('room-category');
 const roomAbout = document.getElementById('about-room');
 const commentList = document.getElementById('comments');
 const addCommentForm = document.getElementById('add-comment-form');
+const xButton = document.getElementById('x-button');
 
 /* State */
 let error = null;
@@ -52,6 +53,10 @@ window.addEventListener('load', async () => {
             displayComments();
         }
     });
+});
+
+xButton.addEventListener('click', () => {
+    location.assign('../');
 });
 
 addCommentForm.addEventListener('submit', async (e) => {

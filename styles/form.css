@@ -7,6 +7,7 @@ form:not(.inline) {
     padding: 2px;
     display: grid;
     gap: 5px;
+    justify-items: center;
 }
 
 label {
@@ -92,14 +93,24 @@ form textarea {
 form button {
     margin-top: 5px;
     height: 45px;
-    background: #d5cfcb;
-    border: 2px solid black;
+    background: #3590db;
+    border: 2px groove rgb(43, 83, 129);
     font-weight: bold;
-    color: black;
+    color: white;
     max-width: fit-content;
     justify-self: center;
+}
+
+form button:hover {
+    transform: scale(102%);
+    transition: all 100ms ease-in;
+    box-shadow: 2px 5px 5px 1px rgba(0, 0, 0, 0.39);
 }
 
 form button:disabled {
     opacity: 0.5;
 }
+
+/* #sign-on-icon {
+    
+} */

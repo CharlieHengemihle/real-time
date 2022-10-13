@@ -60,6 +60,21 @@ ul {
     border: 1px solid black;
 }
 
+.search-form-label {
+    margin: 0;
+    color: #3590db;
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.219);
+}
+
+#search-span {
+    font-weight: normal;
+    color: white;
+    font-size: 0.7em;
+    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.548);
+}
+
 #search-form button {
     padding: 2px;
     background: #3590db;

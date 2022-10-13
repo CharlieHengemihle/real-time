@@ -11,7 +11,10 @@
         <link rel="icon" type="image/x-icon" href="/assets/aim-guy.png" />
 
         <!-- js -->
-        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"></script>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
         <script type="module" src="app.js"></script>
 
         <!-- fonts -->
@@ -43,10 +46,13 @@
 
         <main>
             <section id="search-bar">
-                <form id="search-form">
-                    <input name="title-search" type="text" placeholder="Search rooms..." />
-                    <button>🔎</button>
-                </form>
+                <label>
+                    <p class="search-form-label">AOL<span id="search-span">Search</span>.</p>
+                    <form id="search-form">
+                        <input name="title-search" type="text" placeholder="Search rooms..." />
+                        <button>🔎</button>
+                    </form>
+                </label>
             </section>
             <section id="rooms">
                 <ul id="rooms-list"></ul>

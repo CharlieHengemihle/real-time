@@ -44,3 +44,40 @@ ul {
     padding: 5px;
     color: black;
 }
+
+#search-bar {
+    display: flex;
+    margin: 10px;
+    justify-content: space-evenly;
+}
+
+#search-form {
+    width: 216px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #d5cfcb;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#search-form button {
+    padding: 2px;
+    background: #3590db;
+    border: 2px groove rgb(43, 83, 129);
+}
+
+#search-form button:hover {
+    transform: scale(102%);
+    transition: all 100ms ease-in;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.39);
+}
+
+#search-form input {
+    background-color: white;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+#search-form input::placeholder {
+    color: #2b6ca1b4;
+}

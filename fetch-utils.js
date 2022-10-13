@@ -62,8 +62,16 @@ export async function getRoom(id) {
         .single();
 }
 
-export async function getRooms() {
-    return await client.from('rooms').select('*');
+export async function getRooms(title) {
+    let query = client.from('rooms').select('*');
+
+    if (title) {
+        query = query.ilike('title', `%${title}%`);
+    }
+
+    const response = await query;
+
+    return response;
 }
 
 export async function createProfile(profile) {

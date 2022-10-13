@@ -7,6 +7,7 @@ import { renderRoom } from './render-utils.js';
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const roomsList = document.getElementById('rooms-list');
+const searchForm = document.getElementById('search-form');
 
 /* State */
 let error = null;
@@ -25,6 +26,26 @@ window.addEventListener('load', async () => {
         displayRooms();
     }
 });
+
+searchForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(searchForm);
+
+    findRooms(formData.get('title-search'));
+});
+
+async function findRooms(title) {
+    const response = await getRooms(title);
+
+    error = response.error;
+    rooms = response.data;
+
+    if (error) {
+        displayError();
+    } else {
+        displayRooms();
+    }
+}
 
 /* Display Functions */
 function displayError() {

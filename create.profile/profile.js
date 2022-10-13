@@ -12,6 +12,8 @@ const updateButton = document.getElementById('update-button');
 const userNameInput = profileForm.querySelector('[name=user_name]');
 const bioTextArea = profileForm.querySelector('[name=bio]');
 const xButton = document.getElementById('x-button');
+const avatarInput = profileForm.querySelector('[name=image]');
+const preview = document.getElementById('image-preview');
 
 // state
 let profile = null;
@@ -33,6 +35,16 @@ window.addEventListener('load', async () => {
 
 xButton.addEventListener('click', () => {
     location.assign('../');
+});
+
+// profile img
+avatarInput.addEventListener('change', () => {
+    const file = avatarInput.files[0];
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+    } else {
+        preview.src = '../assets/placeholder-image.png';
+    }
 });
 
 // profile
@@ -77,5 +89,8 @@ function displayProfile() {
     if (profile) {
         userNameInput.value = profile.user_name;
         bioTextArea.value = profile.bio;
+        if (profile.image) {
+            preview.src = profile.image;
+        }
     }
 }

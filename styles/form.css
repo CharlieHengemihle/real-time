@@ -72,8 +72,19 @@ form select {
 }
 
 .image-select {
+    width: 70%;
     display: inline-flex;
 }
+
+.room-image-select {
+    width: 75%;
+    display: inline-flex;
+}
+
+#image-input {
+    justify-items: center;
+}
+
 form input[type='file'] {
     padding: 0;
 }

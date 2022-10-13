@@ -49,7 +49,7 @@ profileForm.addEventListener('submit', async (e) => {
     const randomFolder = Math.floor(Date.now() * Math.random());
     const imagePath = `profiles/${randomFolder}/${imageFile.name}`;
     const url = await uploadImage('bucket1', imagePath, imageFile);
-    
+
     const createProfileObject = {
         user_name: formData.get('user_name'),
         bio: formData.get('bio'),

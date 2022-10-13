@@ -44,6 +44,10 @@ li {
     align-items: center;
     width: 100%;
 }
+
+#room-image {
+    max-width: 398px;
+}
 .X-button {
     width: 45px;
     height: 25px;

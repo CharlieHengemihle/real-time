@@ -12,6 +12,7 @@ const roomAbout = document.getElementById('about-room');
 const commentList = document.getElementById('comments');
 const addCommentForm = document.getElementById('add-comment-form');
 const xButton = document.getElementById('x-button');
+const roomImage = document.getElementById('room-image');
 
 /* State */
 let error = null;
@@ -106,4 +107,5 @@ function displayRoom() {
     roomTitle.textContent = room.title;
     roomCategory.textContent = room.category;
     roomAbout.textContent = room.about;
+    roomImage.src = room.image;
 }

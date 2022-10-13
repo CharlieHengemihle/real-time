@@ -27,23 +27,27 @@
         <link rel="stylesheet" href="/styles/global.css" />
         <!-- add link for page specific css -->
         <link rel="stylesheet" href="/styles/home.css" />
-        <link rel="stylesheet" href="room-detail.css" />
+        <link rel="stylesheet" href="/room.detail/room-detail.css" />
     </head>
 
     <body>
         <header class="page-header">
-            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
+            <img class="logo" src="/assets/aim-guy.png" alt="logo" />
             <p class="title">Supabase Web App</p>
             <nav>
                 <a href="/">Home</a>
                 <a href="/create.room/index.html">Create Room</a>
                 <a href="/create.profile/index.html">Create Profile</a>
-                <a id="sign-out-link" href="auth">Sign Out</a>
+                <a id="sign-out-link" href="/auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
             <section id="about-room-comment-form">
+                <div class="banner">
+                    <h2><img src="/assets/aim-guy.png" class="lil-guy" />An Internet Room</h2>
+                    <button class="X-button" id="x-button">X</button>
+                </div>
                 <div id="room-detail">
                     <h2 id="room-title"></h2>
                     <span id="room-category"></span>
@@ -57,56 +61,7 @@
                 </form>
             </section>
             <section id="comment-section">
-                <ul id="comments">
-                    <li class="comment-item">
-                        <p class="comment-body">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
-                            sapiente, qui sit atque suscipit facere in repellat eaque?
-                        </p>
-                        <span class="timestamp">Jan 1st 1970</span>
-                    </li>
-                    <li class="comment-item">
-                        <p class="comment-body">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
-                            sapiente, qui sit atque suscipit facere in repellat eaque?
-                        </p>
-                        <span class="timestamp">Jan 1st 1970</span>
-                    </li>
-                    <li class="comment-item">
-                        <p class="comment-body">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
-                            sapiente, qui sit atque suscipit facere in repellat eaque?
-                        </p>
-                        <span class="timestamp">Jan 1st 1970</span>
-                    </li>
-                    <li class="comment-item">
-                        <p class="comment-body">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
-                            sapiente, qui sit atque suscipit facere in repellat eaque?
-                        </p>
-                        <span class="timestamp">Jan 1st 1970</span>
-                    </li>
-                    <li class="comment-item">
-                        <p class="comment-body">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
-                            sapiente, qui sit atque suscipit facere in repellat eaque?
-                        </p>
-                        <span class="timestamp">Jan 1st 1970</span>
-                    </li>
-                    <li class="comment-item">
-                        <p class="comment-body">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-                            maxime ab nam saepe amet ut reprehenderit quod deleniti dolor hic porro
-                            sapiente, qui sit atque suscipit facere in repellat eaque?
-                        </p>
-                        <span class="timestamp">Jan 1st 1970</span>
-                    </li>
-                </ul>
+                <ul id="comments"></ul>
             </section>
             <p id="error-display"></p>
         </main>

@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Supabase Web App</title>
-        <link rel="icon" type="image/x-icon" href="../assets/alchemy-favicon.png" />
+        <title>What's AOL anyways?</title>
+        <link rel="icon" type="image/x-icon" href="../assets/aim-guy.png" />
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -43,7 +43,7 @@
         <main>
             <form id="profile-form">
                 <div class="banner">
-                    <h2><img src="/assets/aim-guy.png" class="lil-guy" />Profile Editor</h2>
+                    <h2><img src="/assets/aim-guy.png" class="lil-guy" />Create a Room</h2>
                     <button class="X-button" id="x-button">X</button>
                 </div>
                 <img src="/assets/aimbanner.png" alt="aim-banner" class="big-guy" />
@@ -52,10 +52,16 @@
                     <input name="user_name" required placeholder="Create a username..." />
                 </label>
 
-                <label>
+                <label id="image-input">
                     <div>Avatar</div>
-                    <input type="file" name="image" placeholder="choose your profile photo" />
-                    <img id="image-preview" src="../assets/placeholder-image.png" class="avatar" />
+                    <div class="room-image-select">
+                        <input type="file" name="image" placeholder="choose your profile photo" />
+                        <img
+                            id="image-preview"
+                            src="../assets/placeholder-image.png"
+                            class="avatar"
+                        />
+                    </div>
                 </label>
 
                 <label>

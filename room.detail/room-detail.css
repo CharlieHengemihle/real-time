@@ -9,9 +9,14 @@ main {
 }
 
 #room-detail {
+    display: grid;
     background-color: #d5cfcb;
     width: 400px;
     border: 1px solid black;
+    justify-content: space-evenly;
+    justify-items: start;
+    margin-top: 2px;
+
 }
 
 ul {
@@ -21,6 +26,12 @@ ul {
     justify-items: center;
     align-items: center;
     justify-items: start;
+}
+
+#add-comment-form{
+    background-color: powderblue;
+    border: 1px solid black;
+    margin-top: 2px;
 }
 
 li {
@@ -47,9 +58,10 @@ li {
 
 #room-image {
     max-width: 398px;
+    border: 1px solid black;
 }
 .X-button {
-    width: 45px;
+    width: 25px;
     height: 25px;
     background-color: #d5cfcb;
     color: black;
@@ -57,7 +69,15 @@ li {
     margin: 4px;
     margin-bottom: 5px;
     padding: 0px;
+    font-weight: bolder;
     border: 0;
     padding-top: 1px;
     justify-self: flex-end;
+}
+
+
+button:hover {
+    transform: scale(102%);
+    transition: all 100ms ease-in;
+    box-shadow: 2px 5px 5px 1px rgba(0, 0, 0, 0.39);
 }
